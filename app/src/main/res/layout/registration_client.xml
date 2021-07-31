@@ -4,46 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <TextView
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="50dp"
 
         android:hint="№ Довідки"/>
-    <TextView
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="Автомобіль"/>
-    <TextView
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="Вантажопідйомність"/>
-    <TextView
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="Тип вантажного відсіку"/>
-    <TextView
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="Власник автомобіля"/>
 
-    <TextView
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="Водій"/>
 
-    <TextView
-        android:enabled="false"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="QRCode"/>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="Scan QRCode"/>
 
     <Button
         android:layout_width="match_parent"
