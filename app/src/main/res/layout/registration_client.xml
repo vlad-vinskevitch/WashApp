@@ -7,34 +7,40 @@
     android:layout_height="match_parent">
 
     <EditText
+        android:id="@+id/number_xml"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-
         android:hint="№ Довідки"/>
     <EditText
+        android:id="@+id/car_xml"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="Автомобіль"/>
     <EditText
+        android:id="@+id/lifting_xml"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="Вантажопідйомність"/>
     <EditText
+        android:id="@+id/type_xml"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="Тип вантажного відсіку"/>
     <EditText
+        android:id="@+id/owner_xml"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="Власник автомобіля"/>
 
     <EditText
+        android:id="@+id/driver_xml"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="Водій"/>
 
 
     <Button
+        android:id="@+id/register_xml"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="register"/>

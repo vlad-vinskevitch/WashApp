@@ -9,6 +9,7 @@
         <entry key="app/src/main/res/layout/moderator_list.xml" value="0.3203125" />
         <entry key="app/src/main/res/layout/moderator_list_item.xml" value="0.3203125" />
         <entry key="app/src/main/res/layout/registration_admin.xml" value="0.27717391304347827" />
+        <entry key="app/src/main/res/layout/registration_client.xml" value="0.3203125" />
         <entry key="app/src/main/res/layout/registration_driver.xml" value="0.3203125" />
       </map>
     </option>
