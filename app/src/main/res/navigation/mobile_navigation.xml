@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_moderation_list">
+
+    <fragment
+        android:id="@+id/nav_moderation_list"
+        android:name="com.sharkit.stft.Moderation.ModeratorList"
+        tools:layout="@layout/moderator_list" />
+
+
+    <fragment
+        android:id="@+id/nav_registration_admin"
+        android:name="com.sharkit.stft.Moderation.RegistrationAdmin"
+        tools:layout="@layout/registration_admin" />
+    <fragment
+        android:id="@+id/nav_change_admin"
+        android:name="com.sharkit.stft.Moderation.ChangeAdmin"
+        tools:layout="@layout/change_admin" />
+</navigation>

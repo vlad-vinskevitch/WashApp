@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "664303162431",
+    "project_id": "stft-ee780",
+    "storage_bucket": "stft-ee780.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:664303162431:android:52269b88aa0833e631d48a",
+        "android_client_info": {
+          "package_name": "com.sharkit.stft"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "664303162431-3gaei72fq5d6c7q2ps7b7o6u651cno93.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sharkit.stft",
+            "certificate_hash": "d4ce7ac372366c7b0c1333c71ba11f1761a5d013"
+          }
+        },
+        {
+          "client_id": "664303162431-e8j3vea3did10d5jos3mbqf0h9brd9ka.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBp1xBxzslNAFgwvQR27F1xuY_H5-wRhxE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "664303162431-e8j3vea3did10d5jos3mbqf0h9brd9ka.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

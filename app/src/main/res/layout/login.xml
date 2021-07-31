@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Login">
+
+    <EditText
+        android:id="@+id/email_xml"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="200dp"
+        android:hint="email"/>
+    <EditText
+        android:id="@+id/password_xml"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="password"/>
+
+    <Button
+        android:id="@+id/login_xml"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="login"/>
+
+    <Button
+        android:id="@+id/qr_code_xml"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="login QRCode"/>
+
+
+
+
+
+
+</LinearLayout>

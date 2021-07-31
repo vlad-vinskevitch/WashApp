@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/email_xml"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Email"/>
+
+    <EditText
+        android:id="@+id/name_xml"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Name Firm"/>
+
+    <EditText
+        android:id="@+id/password_xml"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Password"/>
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/role_xml"/>
+
+    <Button
+        android:id="@+id/register_xml"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="register"/>
+
+</LinearLayout>
