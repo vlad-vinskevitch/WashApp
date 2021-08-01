@@ -22,11 +22,14 @@ import com.sharkit.stft.settings.Validation;
 import com.sharkit.stft.ui.Admin;
 import com.sharkit.stft.ui.StaticAdmin;
 
+import java.util.ArrayList;
+
 public class ChangeAdmin extends Fragment {
     private Button register;
     private EditText name;
     private Spinner role;
     private String nameFirm;
+    private ArrayList<String> tags;
 
 
     @Nullable
@@ -57,10 +60,30 @@ public class ChangeAdmin extends Fragment {
                 }
                 return;
             }
+            generateKey(name.getText().toString());
+            admin.setTag(tags);
             admin.setName(name.getText().toString());
             admin.setRole(role.getSelectedItem().toString());
             changeAdmin(admin);
         });
+    }
+    private void generateKey(String inputText) {
+        String inputString = inputText.toLowerCase();
+        String [] tagArray = inputString.split(" ");
+        tags = new ArrayList<>();
+
+
+
+        for (String word : tagArray){
+            String a = "";
+            char [] b = inputString.toCharArray();
+
+            for (int i = 0; i < b.length; i++){
+                a += b[i];
+                tags.add(a);
+            }
+            inputString = inputString.replace(word, "").trim();
+        }
     }
 
     private void changeAdmin(Admin admin) {

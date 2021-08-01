@@ -1,7 +1,18 @@
 package com.sharkit.stft.ui;
 
+import java.util.List;
+
 public class StaticAdmin {
     private static String name, password, role, email;
+    private static List<String> tag;
+
+    public static List<String> getTag() {
+        return tag;
+    }
+
+    public static void setTag(List<String> tag) {
+        StaticAdmin.tag = tag;
+    }
 
     public static String getName() {
         return name;

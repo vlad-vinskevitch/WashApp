@@ -19,4 +19,17 @@
         android:id="@+id/nav_change_admin"
         android:name="com.sharkit.stft.Moderation.ChangeAdmin"
         tools:layout="@layout/change_admin" />
+
+    <fragment
+        android:id="@+id/nav_registration_client"
+        android:name="com.sharkit.stft.Moderation.RegistrationClient"
+        tools:layout="@layout/registration_client" />
+    <fragment
+        android:id="@+id/nav_wash_list_driver"
+        android:name="com.sharkit.stft.Driver.WashListDriver"
+        tools:layout="@layout/wash_list_driver" />
+    <fragment
+        android:id="@+id/nav_list_all_drivers"
+        android:name="com.sharkit.stft.Moderation.ListAllDriver"
+        tools:layout="@layout/list_all_driver" />
 </navigation>

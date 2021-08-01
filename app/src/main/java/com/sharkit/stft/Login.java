@@ -1,20 +1,26 @@
 package com.sharkit.stft;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.sharkit.stft.Notification.ToastComplete;
+import com.sharkit.stft.ui.Admin;
+import com.sharkit.stft.ui.Variable;
 
 public class Login extends AppCompatActivity implements View.OnClickListener {
     private Button login, qr_code;
@@ -27,10 +33,10 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         findView();
         onClickView();
 
-        if (mAuth.getCurrentUser().getUid() != null){
-            Intent intent = new Intent(this, Moderator.class);
-            startActivity(intent);
-        }
+//        if (mAuth.getCurrentUser().getUid() != null){
+//            Intent intent = new Intent(this, Moderator.class);
+//            startActivity(intent);
+//        }
     }
 
     private void onClickView() {
@@ -63,12 +69,33 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
     private void loginProfile() {
 
-        Intent intent = new Intent(this, Moderator.class);
-        mAuth.signInWithEmailAndPassword(email.getText().toString(), password.getText().toString()).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+        Intent moderator = new Intent(this, Moderator.class);
+        Intent firm = new Intent(this, Moderator.class);
+        mAuth.signInWithEmailAndPassword(email.getText().toString() + "@stft.com", password.getText().toString())
+                .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override
             public void onSuccess(AuthResult authResult) {
-
-                startActivity(intent);
+                FirebaseFirestore db = FirebaseFirestore.getInstance();
+                Log.d("TAGA", "success");
+                db.collection("Admins")
+                        .whereEqualTo("email", authResult.getUser().getEmail())
+                        .get()
+                        .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                            @Override
+                            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                                Log.d("TAGA", queryDocumentSnapshots.size()+"");
+                                for (QueryDocumentSnapshot snapshot : queryDocumentSnapshots){
+                                    Admin admin = snapshot.toObject(Admin.class);
+                                    Log.d("TAGA", admin.getRole());
+                                    if (admin.getRole().equals("Модератор")){
+                                        startActivity(moderator);
+                                    } else if(admin.getRole().equals("Фірма")){
+                                        Variable.setFirm(admin.getName());
+                                        startActivity(firm);
+                                    }
+                                }
+                            }
+                        });
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override

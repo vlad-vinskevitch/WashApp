@@ -13,15 +13,15 @@ public class Validation {
     public static boolean isValidAdminRegistration(String email, String name, String password, Context context){
         if (TextUtils.isEmpty(email)){
             try {
-                throw new ToastComplete(context,"Введіть пошту");
+                throw new ToastComplete(context,"Введіть номер телефону");
             } catch (ToastComplete toastComplete) {
                 toastComplete.printStackTrace();
             }
             return false;
         }
-        if (!isValidEmail(email)){
+        if (email.length() != 10){
             try {
-                throw new ToastComplete(context, "Введіть правильний формат пошти");
+                throw new ToastComplete(context, "Введений неправельний формат номеру +380");
             } catch (ToastComplete toastComplete) {
                 toastComplete.printStackTrace();
             }
@@ -81,5 +81,74 @@ public class Validation {
     }
     public final static boolean isValidEmail(CharSequence target) {
         return !TextUtils.isEmpty(target) && android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
+    }
+
+    public static boolean isValidDriverRegistration(String password, String number, String car, String lifting, String type, String owner, String drive, Context context) {
+        if (number.length() != 10){
+            try {
+                throw new ToastComplete(context, "Введений неправельний формат номеру +380");
+            } catch (ToastComplete toastComplete) {
+                toastComplete.printStackTrace();
+            }
+            return false;
+        }
+        if (password.trim().length() < 6){
+            try {
+                throw new ToastComplete(context, "Пароль повинен містити більше 5 символів");
+            } catch (ToastComplete toastComplete) {
+                toastComplete.printStackTrace();
+            }
+            return false;
+        }
+        if (ValidatorPass(password)){
+            try {
+                throw new ToastComplete(context, "Пароль не повинен містити кириллиці або пробілів");
+            } catch (ToastComplete toastComplete) {
+                toastComplete.printStackTrace();
+            }
+            return false;
+        }
+
+        if (TextUtils.isEmpty(car)){
+            try {
+                throw new ToastComplete(context, "Введіть назву, або номер машини");
+            } catch (ToastComplete toastComplete) {
+                toastComplete.printStackTrace();
+            }
+            return false;
+        }
+        if (TextUtils.isEmpty(lifting)){
+            try {
+                throw new ToastComplete(context, "Введіть вантажопійомність машини");
+            } catch (ToastComplete toastComplete) {
+                toastComplete.printStackTrace();
+            }
+            return false;
+        }
+        if (TextUtils.isEmpty(type)){
+            try {
+                throw new ToastComplete(context, "Введіть тип вантажного відсіку");
+            } catch (ToastComplete toastComplete) {
+                toastComplete.printStackTrace();
+            }
+            return false;
+        }
+        if (TextUtils.isEmpty(owner)){
+            try {
+                throw new ToastComplete(context, "Введіть фірму власник");
+            } catch (ToastComplete toastComplete) {
+                toastComplete.printStackTrace();
+            }
+            return false;
+        }
+        if (TextUtils.isEmpty(drive)){
+            try {
+                throw new ToastComplete(context, "Введить П.І.Б водія");
+            } catch (ToastComplete toastComplete) {
+                toastComplete.printStackTrace();
+            }
+            return false;
+        }
+        return true;
     }
 }

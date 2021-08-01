@@ -43,7 +43,8 @@ public class Moderator extends AppCompatActivity {
         navController.navigate(R.id.nav_registration_admin);
     }
     public void onClickScanQR(MenuItem item){
-
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        navController.navigate(R.id.nav_registration_client);
     }
 
 

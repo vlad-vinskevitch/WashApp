@@ -1,6 +1,7 @@
 package com.sharkit.stft.Moderation;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,11 +23,14 @@ import com.sharkit.stft.R;
 import com.sharkit.stft.settings.Validation;
 import com.sharkit.stft.ui.Admin;
 
+import java.util.ArrayList;
+
 public class RegistrationAdmin extends Fragment {
 
     private Button register;
     private EditText name, password, email;
     private Spinner role;
+    private ArrayList<String> tags;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -49,17 +53,37 @@ public class RegistrationAdmin extends Fragment {
         });
     }
 
+    private void generateKey(String inputText) {
+        String inputString = inputText.toLowerCase();
+        String [] tagArray = inputString.split(" ");
+        tags = new ArrayList<>();
+
+
+
+        for (String word : tagArray){
+            String a = "";
+            char [] b = inputString.toCharArray();
+
+            for (int i = 0; i < b.length; i++){
+                a += b[i];
+                tags.add(a);
+            }
+            inputString = inputString.replace(word, "").trim();
+        }
+    }
+
     private void createNewAdmin() {
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-        mAuth.createUserWithEmailAndPassword(email.getText().toString().trim(), password.getText().toString().trim())
+        generateKey(name.getText().toString());
+        mAuth.createUserWithEmailAndPassword(email.getText().toString().trim() + "@stft.com", password.getText().toString().trim())
                 .addOnSuccessListener(authResult -> {
                     Admin admin = new Admin();
                     admin.setName(name.getText().toString());
                     admin.setPassword(password.getText().toString());
                     admin.setRole(role.getSelectedItem().toString());
-                    admin.setEmail(email.getText().toString());
+                    admin.setTag(tags);
+                    admin.setEmail(email.getText().toString()+ "@stft.com ");
 
                     db.collection("Admins").document(name.getText().toString())
                             .set(admin)
@@ -74,7 +98,7 @@ public class RegistrationAdmin extends Fragment {
                             });
                 }).addOnFailureListener(e -> {
 
-
+            Log.d("TAGA", e.getMessage());
                     try {
                         throw new ToastComplete(getContext(), "Користувач з такою поштою вже існує");
                     } catch (ToastComplete toastComplete) {
