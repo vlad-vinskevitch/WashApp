@@ -3,7 +3,7 @@ package com.sharkit.stft.ui;
 import java.util.List;
 
 public class Driver {
-    private String car, type, owner, driver,lifting, password, number;
+    private String car, type, owner, driver,lifting, password, email;
     private List<String> tag;
 
     public List<String> getTag() {
@@ -62,11 +62,11 @@ public class Driver {
         this.lifting = lifting;
     }
 
-    public String getNumber() {
-        return number;
+    public String getEmail() {
+        return email;
     }
 
-    public void setNumber(String number) {
-        this.number = number;
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

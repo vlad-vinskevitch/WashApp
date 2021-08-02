@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/layout/activity_drivers.xml" value="0.16666666666666666" />
         <entry key="app/src/main/res/layout/activity_firm.xml" value="0.16666666666666666" />
         <entry key="app/src/main/res/layout/admin_list_client_item.xml" value="0.33" />
         <entry key="app/src/main/res/layout/amin_list_client.xml" value="0.17395833333333333" />
@@ -17,6 +18,8 @@
         <entry key="app/src/main/res/layout/registration_client.xml" value="0.3203125" />
         <entry key="app/src/main/res/layout/registration_driver.xml" value="0.3203125" />
         <entry key="app/src/main/res/layout/wash_list_driver.xml" value="0.22" />
+        <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.16666666666666666" />
+        <entry key="app/src/main/res/menu/bottom_nav_menu_driver.xml" value="0.16666666666666666" />
       </map>
     </option>
   </component>

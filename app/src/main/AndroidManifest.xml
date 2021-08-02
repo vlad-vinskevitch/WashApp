@@ -12,6 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WashApp">
         <activity
+            android:name=".Drivers"
+            android:exported="true"
+            android:label="@string/title_activity_driver" />
+        <activity
             android:name=".Firm"
             android:exported="true" />
         <activity

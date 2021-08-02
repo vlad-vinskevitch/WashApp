@@ -78,7 +78,7 @@ public class RegistrationClient extends Fragment {
         generateKey(drive.getText().toString());
         Driver driver = new Driver();
         driver.setTag(tags);
-        driver.setNumber(number.getText().toString() + "@stft.com");
+        driver.setEmail(number.getText().toString() + "@stft.com");
         driver.setPassword(password.getText().toString());
         driver.setDriver(drive.getText().toString());
         driver.setCar(car.getText().toString());
