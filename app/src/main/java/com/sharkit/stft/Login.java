@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -24,7 +25,9 @@ import com.sharkit.stft.ui.Variable;
 
 public class Login extends AppCompatActivity implements View.OnClickListener {
     private Button login, qr_code;
-    private EditText password, email;
+
+    private TextInputEditText email, password ;
+
     FirebaseAuth mAuth = FirebaseAuth.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,7 +81,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
                 Log.d("TAGA", "success");
                 db.collection("Admins")
-                        .whereEqualTo("email", authResult.getUser().getEmail())
+//                        .whereEqualTo("email", authResult.getUser().getEmail())
                         .get()
                         .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                             @Override

@@ -12,15 +12,24 @@
 
 
     </LinearLayout>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Пошук по імені водія"
-        android:id="@+id/find_xml"
-        android:layout_below="@+id/linn"/>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textinput"
+        android:layout_below="@+id/linn"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:hint="@string/search_driver_by_name"
+        app:hintAnimationEnabled="true">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/find_xml"
+            style="@style/style_text_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
     <ListView
-        android:layout_below="@+id/find_xml"
+        android:layout_below="@+id/textinput"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/list_driver_xml"/>
