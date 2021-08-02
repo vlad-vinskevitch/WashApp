@@ -5,18 +5,18 @@
         android:onClick="onClickListClient"
         android:id="@+id/navigation_home"
         android:icon="@drawable/list"
-        android:title="list" />
+        android:title="@string/list" />
 
     <item
         android:onClick="onClickScanQR"
         android:id="@+id/navigation_notifications"
         android:icon="@drawable/qr"
-        android:title="QRCode" />
+        android:title="@string/scan_qr" />
 
     <item
         android:onClick="onClickAddNewAdmin"
         android:id="@+id/navigation_dashboard"
         android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="add new admin" />
+        android:title="@string/registrate" />
 
 </menu>

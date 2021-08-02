@@ -77,7 +77,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             public void onSuccess(AuthResult authResult) {
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
                 db.collection("Admins")
-//                        .whereEqualTo("email", authResult.getUser().getEmail())
+                        .whereEqualTo("email", authResult.getUser().getEmail())
                         .get()
                         .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                             @Override
