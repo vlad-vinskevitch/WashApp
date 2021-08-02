@@ -36,10 +36,10 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         findView();
         onClickView();
 
-//        if (mAuth.getCurrentUser().getUid() != null){
-//            Intent intent = new Intent(this, Moderator.class);
-//            startActivity(intent);
-//        }
+        if (mAuth.getCurrentUser().getUid() != null){
+            Intent intent = new Intent(this, Moderator.class);
+            startActivity(intent);
+        }
     }
 
     private void onClickView() {
