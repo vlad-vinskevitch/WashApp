@@ -59,8 +59,14 @@ public class DriverListAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 Variable.setDriver(mGroup.get(position).getDriver());
-                NavController navController = Navigation.findNavController((Activity) mContext, R.id.nav_host_fragment);
-                navController.navigate(R.id.nav_wash_list_driver);
+                if (Variable.getRole().equals("Модератор")) {
+                    NavController navController = Navigation.findNavController((Activity) mContext, R.id.nav_host_fragment);
+                    navController.navigate(R.id.nav_wash_list_driver);
+                }else {
+                    NavController navController = Navigation.findNavController((Activity) mContext, R.id.nav_firm_fragment);
+                    navController.navigate(R.id.nav_wash_list_driver);
+                }
+
             }
         });
 

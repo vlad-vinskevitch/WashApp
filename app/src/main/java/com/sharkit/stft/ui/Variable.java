@@ -1,7 +1,15 @@
 package com.sharkit.stft.ui;
 
 public class Variable {
-    private static String firm, driver;
+    private static String firm, driver, role;
+
+    public static String getRole() {
+        return role;
+    }
+
+    public static void setRole(String role) {
+        Variable.role = role;
+    }
 
     public static String getDriver() {
         return driver;

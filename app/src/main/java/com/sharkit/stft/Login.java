@@ -21,6 +21,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.sharkit.stft.Notification.ToastComplete;
 import com.sharkit.stft.ui.Admin;
+import com.sharkit.stft.ui.Driver;
 import com.sharkit.stft.ui.Variable;
 
 public class Login extends AppCompatActivity implements View.OnClickListener {
@@ -35,11 +36,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         setContentView(R.layout.login);
         findView();
         onClickView();
-
-        if (mAuth.getCurrentUser().getUid() != null){
-            Intent intent = new Intent(this, Moderator.class);
-            startActivity(intent);
-        }
     }
 
     private void onClickView() {
@@ -73,13 +69,13 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     private void loginProfile() {
 
         Intent moderator = new Intent(this, Moderator.class);
-        Intent firm = new Intent(this, Moderator.class);
+        Intent firm = new Intent(this, Firm.class);
+        Intent driver = new Intent(this, Drivers.class);
         mAuth.signInWithEmailAndPassword(email.getText().toString() + "@stft.com", password.getText().toString())
                 .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override
             public void onSuccess(AuthResult authResult) {
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
-                Log.d("TAGA", "success");
                 db.collection("Admins")
 //                        .whereEqualTo("email", authResult.getUser().getEmail())
                         .get()
@@ -89,13 +85,28 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                                 Log.d("TAGA", queryDocumentSnapshots.size()+"");
                                 for (QueryDocumentSnapshot snapshot : queryDocumentSnapshots){
                                     Admin admin = snapshot.toObject(Admin.class);
-                                    Log.d("TAGA", admin.getRole());
+                                    Variable.setFirm(admin.getName());
+                                    Variable.setRole(admin.getRole());
                                     if (admin.getRole().equals("Модератор")){
                                         startActivity(moderator);
+                                        return;
                                     } else if(admin.getRole().equals("Фірма")){
                                         Variable.setFirm(admin.getName());
                                         startActivity(firm);
+                                        return;
                                     }
+                                }
+                            }
+                        });
+                db.collection("Drivers")
+                        .whereEqualTo("email", authResult.getUser().getEmail())
+                        .get()
+                        .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                            @Override
+                            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                                Log.d("TAGA", queryDocumentSnapshots.size()+" 2");
+                                if (queryDocumentSnapshots.size() != 0){
+                                   startActivity(driver);
                                 }
                             }
                         });
@@ -103,11 +114,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                try {
-                    throw new ToastComplete(getApplicationContext(), "fail");
-                } catch (ToastComplete toastComplete) {
-                    toastComplete.printStackTrace();
-                }
+
             }
         });
 

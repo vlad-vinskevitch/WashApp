@@ -28,4 +28,6 @@
         <item>Фірма</item>
         <item>Модератор</item>
     </string-array>
+    <string name="title_activity_drivers">Drivers</string>
+    <string name="title_activity_driver">DriverActivity</string>
 </resources>
