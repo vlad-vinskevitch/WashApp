@@ -7,6 +7,23 @@
     <string name="for_month">За місяць</string>
     <string name="all_period">За весь період</string>
     <string name="title_activity_maps">MapsActivity</string>
+
+    <string name="login">Ввійти</string>
+    <string name="loginQR">Ввійти через QR-код</string>
+    <string name="enter_pass">Введіть пароль</string>
+    <string name="number_telephone">Номер телефону</string>
+    <string name="weigth_ton">Вантажопідйомність т.</string>
+    <string name="auto">Автомобіль</string>
+    <string name="type_cargo">Тип вантажного відсіку</string>
+    <string name="car_owner">Власник автомобіля</string>
+    <string name="driver">Водій</string>
+    <string name="register">Реєстація</string>
+    <string name="search_driver_by_name">Пошук по імені водія</string>
+    <string name="name_firm">Назва фірми</string>
+    <string name="password">Пароль</string>
+    <string name="change">Змінити</string>
+    <string name="search">Пошук</string>
+
     <string-array name="level_access">
         <item>Фірма</item>
         <item>Модератор</item>
