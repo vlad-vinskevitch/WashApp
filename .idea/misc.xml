@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/proect/washapp/WashApp/app/src/main/res/drawable/drawable_button.xml" value="0.25925925925925924" />
+        <entry key="..\:/proect/washapp/WashApp/app/src/main/res/layout/activity_drivers.xml" value="0.1983695652173913" />
         <entry key="..\:/proect/washapp/WashApp/app/src/main/res/layout/admin_list_client_item.xml" value="0.4" />
         <entry key="..\:/proect/washapp/WashApp/app/src/main/res/layout/amin_list_client.xml" value="0.2033514492753623" />
         <entry key="..\:/proect/washapp/WashApp/app/src/main/res/layout/change_admin.xml" value="0.264" />
@@ -12,9 +13,12 @@
         <entry key="..\:/proect/washapp/WashApp/app/src/main/res/layout/list_driver_item.xml" value="0.2033514492753623" />
         <entry key="..\:/proect/washapp/WashApp/app/src/main/res/layout/login.xml" value="0.2" />
         <entry key="..\:/proect/washapp/WashApp/app/src/main/res/layout/moderator_list.xml" value="0.2594995366079703" />
-        <entry key="..\:/proect/washapp/WashApp/app/src/main/res/layout/moderator_list_item.xml" value="0.2033514492753623" />
+        <entry key="..\:/proect/washapp/WashApp/app/src/main/res/layout/moderator_list_item.xml" value="0.264" />
         <entry key="..\:/proect/washapp/WashApp/app/src/main/res/layout/registration_admin.xml" value="0.264" />
-        <entry key="..\:/proect/washapp/WashApp/app/src/main/res/layout/registration_client.xml" value="0.264" />
+        <entry key="..\:/proect/washapp/WashApp/app/src/main/res/layout/registration_client.xml" value="0.176" />
+        <entry key="..\:/proect/washapp/WashApp/app/src/main/res/layout/wash_list_driver.xml" value="0.264" />
+        <entry key="..\:/proect/washapp/WashApp/app/src/main/res/menu/bottom_nav_menu.xml" value="0.275" />
+        <entry key="..\:/proect/washapp/WashApp/app/src/main/res/menu/bottom_nav_menu_driver.xml" value="0.275" />
         <entry key="app/src/main/res/layout/activity_firm.xml" value="0.16666666666666666" />
         <entry key="app/src/main/res/layout/admin_list_client_item.xml" value="0.33" />
         <entry key="app/src/main/res/layout/amin_list_client.xml" value="0.17395833333333333" />
