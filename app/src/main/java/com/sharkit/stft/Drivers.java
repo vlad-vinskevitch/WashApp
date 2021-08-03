@@ -60,11 +60,26 @@ public class Drivers extends AppCompatActivity {
             }
         });
     }
+
+
+
+
     private void createQRCode(ImageView imageView) {
 
         MultiFormatWriter writer = new MultiFormatWriter() ;
+
+
+
         try {
-            BitMatrix matrix = writer.encode(Variable.getEmail(), BarcodeFormat.QR_CODE, 350,350);
+            BitMatrix matrix = writer.encode(Variable.getEmail(), BarcodeFormat.QR_CODE, 500,500);
+//            if{
+//
+//                matrix = writer.encode(Variable.getEmail(), BarcodeFormat.QR_CODE, 500,500);
+//            }else{
+//                matrix =  = writer.encode(Variable.getEmail(), BarcodeFormat.QR_CODE, 500,500);
+//            }
+
+
             BarcodeEncoder encoder = new BarcodeEncoder();
             Bitmap bitmap = encoder.createBitmap(matrix);
             imageView.setImageBitmap(bitmap);
@@ -76,6 +91,9 @@ public class Drivers extends AppCompatActivity {
         }
 
     }
+
+
+
 
 
     private void findView() {
