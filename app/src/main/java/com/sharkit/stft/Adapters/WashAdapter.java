@@ -45,8 +45,8 @@ public class WashAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.list_driver_item, null);
         }
         findView(convertView);
-//        data.setText(mGroup.get(position).getData());
-//        number.setText(mGroup.get(position).getNumber());
+        data.setText(mGroup.get(position).getData());
+        number.setText(String.valueOf(mGroup.get(position).getNumber()));
 
         return convertView;
     }

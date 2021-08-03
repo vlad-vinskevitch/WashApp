@@ -16,6 +16,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.sharkit.stft.Notification.ToastComplete;
@@ -28,6 +29,7 @@ import java.util.ArrayList;
 public class RegistrationAdmin extends Fragment {
 
     private Button register;
+    private TabLayout tabLayout;
     private EditText name, password, email;
     private Spinner role;
     private ArrayList<String> tags;
@@ -49,6 +51,31 @@ public class RegistrationAdmin extends Fragment {
                     password.getText().toString().trim(),
                     getContext())){
                 createNewAdmin();
+            }
+        });
+        NavController navController = Navigation.findNavController(requireActivity(),R.id.nav_host_fragment);
+        TabLayout.Tab tab = tabLayout.getTabAt(1);
+        tab.select();
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                switch (tab.getPosition()){
+                    case 0: navController.navigate(R.id.nav_registration_client);
+
+                        break;
+                    case 1: navController.navigate(R.id.nav_registration_admin);
+                        break;
+                }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
             }
         });
     }
@@ -108,6 +135,7 @@ public class RegistrationAdmin extends Fragment {
     }
 
     private void findView(View root) {
+        tabLayout = root.findViewById(R.id.tab_xml);
         email = root.findViewById(R.id.email_xml);
         register = root.findViewById(R.id.register_xml);
         name = root.findViewById(R.id.name_xml);

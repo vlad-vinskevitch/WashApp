@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.sharkit.stft.Notification.ToastComplete;
@@ -24,6 +25,7 @@ import java.util.ArrayList;
 
 public class RegistrationClient extends Fragment {
     private Button register;
+    private TabLayout tabLayout;
     private EditText car, lifting, type, owner, drive, number, password;
     private ArrayList<String> tags;
 
@@ -32,8 +34,39 @@ public class RegistrationClient extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.registration_client, container, false);
         findView(root);
-        register.setOnClickListener(v -> createDriver());
+        onClick();
+
         return root;
+    }
+
+    private void onClick() {
+        NavController navController = Navigation.findNavController(requireActivity(),R.id.nav_host_fragment);
+        register.setOnClickListener(v -> createDriver());
+        TabLayout.Tab tab = tabLayout.getTabAt(0);
+        tab.select();
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                    switch (tab.getPosition()){
+                        case 0: navController.navigate(R.id.nav_registration_client);
+
+                            break;
+                        case 1: navController.navigate(R.id.nav_registration_admin);
+                            break;
+
+                }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
     }
 
     private void createDriver() {
@@ -103,6 +136,7 @@ public class RegistrationClient extends Fragment {
     }
 
     private void findView(View root) {
+        tabLayout = root.findViewById(R.id.tab_xml);
         number = root.findViewById(R.id.number_xml);
         register = root.findViewById(R.id.register_xml);
         car = root.findViewById(R.id.car_xml);

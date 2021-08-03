@@ -6,7 +6,7 @@
     >
 
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tab"
+        android:id="@+id/tab_xml"
         android:background="@color/secondary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,7 +31,7 @@
     <LinearLayout
         android:layout_marginHorizontal="20dp"
         android:id="@+id/qwerty"
-        android:layout_below="@+id/tab"
+        android:layout_below="@+id/tab_xml"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -63,7 +63,7 @@
                 style="@style/style_text_edit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="phone" />
+                android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -79,7 +79,7 @@
                 style="@style/style_text_edit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="phone" />
+                android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>

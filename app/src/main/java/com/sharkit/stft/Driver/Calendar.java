@@ -17,6 +17,7 @@ import com.sharkit.stft.R;
 import com.sharkit.stft.ui.Variable;
 
 import java.lang.annotation.Native;
+import java.text.SimpleDateFormat;
 
 public class Calendar extends Fragment {
     private CalendarView calendarView;
@@ -44,9 +45,12 @@ public class Calendar extends Fragment {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
                 java.util.Calendar calendar = java.util.Calendar.getInstance();
-                calendar.set(java.util.Calendar.YEAR, year,
-                        java.util.Calendar.MONTH, month,
-                        java.util.Calendar.DATE,dayOfMonth);
+                calendar.set(java.util.Calendar.YEAR, year);
+                calendar.set(java.util.Calendar.MONTH, month);
+                calendar.set(java.util.Calendar.DATE, dayOfMonth);
+
+                SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
+                Log.d("TAGA", format.format(calendar.getTimeInMillis()));
                 Variable.setTime(calendar.getTimeInMillis());
                 navController.navigate(R.id.nav_wash_list_driver);
             }

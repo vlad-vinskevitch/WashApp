@@ -1,14 +1,11 @@
 package com.sharkit.stft.Driver;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CalendarView;
-import android.widget.ImageView;
+import android.widget.Button;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -21,7 +18,6 @@ import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.sharkit.stft.Adapters.WashAdapter;
-import com.sharkit.stft.Drivers;
 import com.sharkit.stft.R;
 import com.sharkit.stft.ui.NewWash;
 import com.sharkit.stft.ui.Variable;
@@ -30,7 +26,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 
 public class WashListDriver extends Fragment {
-    private TabLayout tabLayout;
+    private Button current, cal;
     private ListView listView;
     private ArrayList<NewWash> list;
     private  NavController navController;
@@ -42,7 +38,7 @@ public class WashListDriver extends Fragment {
         View root = inflater.inflate(R.layout.wash_list_driver, container, false);
         findView(root);
         calendar.setTimeInMillis(Variable.getTime());
-//        onClick();
+        onClick();
         setAllList();
 
 
@@ -58,25 +54,19 @@ public class WashListDriver extends Fragment {
         }else if (Variable.getRole().equals("Водій")){
             navController = Navigation.findNavController(getActivity(), R.id.nav_driver_fragment);
         }
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+
+        current.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                switch (tab.getPosition()){
-                    case 0:
-                        Calendar instance = Calendar.getInstance();
-                        calendar.setTimeInMillis(instance.getTimeInMillis());
-                        navController.navigate(R.id.nav_wash_list_driver);
-                        break;
-                    case 1:
-                       navController.navigate(R.id.nav_calendar);
-                       break;
-                }
+            public void onClick(View v) {
+                Calendar instance = Calendar.getInstance();
+                Variable.setTime(instance.getTimeInMillis());
+                navController.navigate(R.id.nav_wash_list_driver);
             }
+        });
+        cal.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-            }
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
+            public void onClick(View v) {
+                navController.navigate(R.id.nav_calendar);
             }
         });
     }
@@ -107,6 +97,7 @@ public class WashListDriver extends Fragment {
 
     private void findView(View root) {
         listView = root.findViewById(R.id.list_driver_xml);
-//        tabLayout = root.findViewById(R.id.tabs_xml);
+        current = root.findViewById(R.id.current);
+        cal = root.findViewById(R.id.calendar);
     }
 }
