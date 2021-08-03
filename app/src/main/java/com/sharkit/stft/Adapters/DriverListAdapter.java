@@ -2,6 +2,7 @@ package com.sharkit.stft.Adapters;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -55,19 +56,18 @@ public class DriverListAdapter extends BaseAdapter {
         car.setText(mGroup.get(position).getCar());
         owner.setText(mGroup.get(position).getOwner());
         driver.setText((mGroup.get(position).getDriver()));
-        layout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Variable.setDriver(mGroup.get(position).getDriver());
-                if (Variable.getRole().equals("Модератор")) {
-                    NavController navController = Navigation.findNavController((Activity) mContext, R.id.nav_host_fragment);
-                    navController.navigate(R.id.nav_wash_list_driver);
-                }else {
-                    NavController navController = Navigation.findNavController((Activity) mContext, R.id.nav_firm_fragment);
-                    navController.navigate(R.id.nav_wash_list_driver);
-                }
 
+        layout.setOnClickListener(v -> {
+            Variable.setDriver(mGroup.get(position).getDriver());
+            Variable.setEmail(mGroup.get(position).getEmail());
+            NavController navController;
+            if (Variable.getRole().equals("Модератор")) {
+                navController = Navigation.findNavController((Activity) mContext, R.id.nav_host_fragment);
+            }else {
+                navController = Navigation.findNavController((Activity) mContext, R.id.nav_firm_fragment);
             }
+            navController.navigate(R.id.nav_wash_list_driver);
+
         });
 
 

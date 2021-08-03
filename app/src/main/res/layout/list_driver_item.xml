@@ -5,24 +5,18 @@
     android:orientation="horizontal">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start"
-        android:text="num"
-        android:id="@+id/number"/>
-    <TextView
         android:layout_margin="20px"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:text="date"
-        android:id="@+id/date"/>
+        android:id="@+id/data_xmls"/>
     <TextView
         android:layout_margin="20px"
         android:layout_gravity="end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/about"
+        android:id="@+id/number_xmls"
         android:text="dovidka"/>
 
 </LinearLayout>

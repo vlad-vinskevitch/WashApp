@@ -22,12 +22,12 @@
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/calendar" />
+                android:text="Даний місяць" />
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/for_the_time" />
+                android:text="@string/calendar" />
 
 
         </com.google.android.material.tabs.TabLayout>
@@ -38,30 +38,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/list_driver_xml"/>
-
-    <com.google.android.material.tabs.TabLayout
-
-        android:layout_alignParentBottom="true"
-        android:background="@color/secondary"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:tabIndicatorColor="@color/white"
-        app:tabSelectedTextColor="@color/white"
-        app:tabTextColor="@color/white">
-
-        <com.google.android.material.tabs.TabItem
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/calendar" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/for_the_time" />
-
-
-    </com.google.android.material.tabs.TabLayout>
 
 
 </RelativeLayout>
