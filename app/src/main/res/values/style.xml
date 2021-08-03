@@ -23,5 +23,11 @@
 
     </style>
 
+    <style name="style_text_view">
+        <item name="android:fontFamily">@font/comfortaa</item>
+        <item name="android:textSize">14sp</item>
+
+    </style>
+
 
 </resources>

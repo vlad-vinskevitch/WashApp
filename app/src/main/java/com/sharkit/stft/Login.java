@@ -82,7 +82,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                         .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                             @Override
                             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                                Log.d("TAGA", queryDocumentSnapshots.size()+"");
+
                                 for (QueryDocumentSnapshot snapshot : queryDocumentSnapshots){
                                     Admin admin = snapshot.toObject(Admin.class);
                                     Variable.setFirm(admin.getName());
@@ -104,7 +104,11 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                         .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                             @Override
                             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                                Log.d("TAGA", queryDocumentSnapshots.size()+" 2");
+                                for (QueryDocumentSnapshot snapshot : queryDocumentSnapshots){
+                                    Driver driver1 = snapshot.toObject(Driver.class);
+                                    Variable.setDriver(driver1.getDriver());
+                                    Variable.setEmail(authResult.getUser().getEmail());
+                                }
                                 if (queryDocumentSnapshots.size() != 0){
                                    startActivity(driver);
                                 }

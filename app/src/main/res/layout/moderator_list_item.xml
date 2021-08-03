@@ -9,6 +9,7 @@
 
 
     <TextView
+        style="@style/style_text_view"
         android:layout_weight="1"
         android:id="@+id/name_xml"
         android:layout_margin="20px"

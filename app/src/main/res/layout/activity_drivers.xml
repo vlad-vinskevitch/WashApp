@@ -18,29 +18,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/mobile_navigation" />
 
-    <com.google.android.material.tabs.TabLayout
+
+    <Button
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="10dp"
+        style="@style/style_button"
         app:layout_constraintBottom_toBottomOf="@id/nav_driver_fragment"
-        android:id="@+id/tab_xml"
-        android:background="@color/secondary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:tabIndicatorColor="@color/white"
-        app:tabSelectedTextColor="@color/white"
-        app:tabTextColor="@color/white">
-
-        <com.google.android.material.tabs.TabItem
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/firm" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/moderator" />
-
-
-    </com.google.android.material.tabs.TabLayout>
+        android:text="@string/show_qr"
+        android:id="@+id/button"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

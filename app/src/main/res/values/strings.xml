@@ -21,7 +21,7 @@
     <string name="search_driver_by_name">Пошук по імені водія</string>
     <string name="name_firm">Назва фірми</string>
     <string name="password">Пароль</string>
-    <string name="change">Змінити</string>
+<!--    <string name="change">Змінити</string>-->
     <string name="search">Пошук</string>
 
     <string-array name="level_access">
@@ -31,7 +31,7 @@
     <string name="title_activity_drivers">Drivers</string>
     <string name="title_activity_driver">DriverActivity</string>
     <string name="calendar">Календар</string>
-    <string name="for_the_time">За весь період</string>
+    <string name="for_the_timee">За весь період</string>
     <string name="registr_firm">Зареєструвати фірму</string>
     <string name="registr_moderator">Зареєструвати модератора</string>
     <string name="list">Список</string>
@@ -40,4 +40,5 @@
     <string name="change">Змінити</string>
     <string name="firm">Фірма</string>
     <string name="moderator">Модератор</string>
+    <string name="show_qr">Показати QR-код</string>
 </resources>
