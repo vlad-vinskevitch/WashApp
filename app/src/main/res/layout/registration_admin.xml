@@ -7,7 +7,7 @@
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab"
-        android:background="@color/black"
+        android:background="@color/secondary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:tabIndicatorColor="@color/white"
@@ -17,18 +17,19 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Фірма" />
+            android:text="@string/registr_firm" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Модератор" />
+            android:text="@string/registr_moderator" />
 
 
     </com.google.android.material.tabs.TabLayout>
 
 
     <LinearLayout
+        android:layout_marginHorizontal="20dp"
         android:id="@+id/qwerty"
         android:layout_below="@+id/tab"
         android:layout_width="match_parent"

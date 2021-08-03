@@ -28,4 +28,13 @@
         <item>Фірма</item>
         <item>Модератор</item>
     </string-array>
+    <string name="title_activity_drivers">Drivers</string>
+    <string name="title_activity_driver">DriverActivity</string>
+    <string name="calendar">Календар</string>
+    <string name="for_the_time">За весь період</string>
+    <string name="registr_firm">Зареєструвати фірму</string>
+    <string name="registr_moderator">Зареєструвати модератора</string>
+    <string name="list">Список</string>
+    <string name="scan_qr">Сканувати QR-код</string>
+    <string name="registrate">Зареєструвати</string>
 </resources>

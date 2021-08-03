@@ -2,129 +2,158 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:layout_marginHorizontal="20dp"
+
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent">
-
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textField"
-        style="@style/style_text_input_layout"
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab"
+        android:background="@color/secondary"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:gravity="center_vertical"
-        android:hint="@string/number_telephone"
-        app:counterEnabled="true"
-        app:counterMaxLength="10"
-        app:hintAnimationEnabled="true"
-        app:prefixText="+38 ">
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/number_xml"
-            style="@style/style_text_edit"
+        android:layout_height="wrap_content"
+        app:tabIndicatorColor="@color/white"
+        app:tabSelectedTextColor="@color/white"
+        app:tabTextColor="@color/white">
+
+    <com.google.android.material.tabs.TabItem
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/registr_firm" />
+
+    <com.google.android.material.tabs.TabItem
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/registr_moderator" />
+    </com.google.android.material.tabs.TabLayout>
+
+    <LinearLayout
+        android:layout_marginHorizontal="20dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textField"
+            style="@style/style_text_input_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="80dp"
             android:gravity="center_vertical"
-            android:inputType="phone" />
+            android:hint="@string/number_telephone"
+            app:counterEnabled="true"
+            app:counterMaxLength="10"
+            app:hintAnimationEnabled="true"
+            app:prefixText="+38 ">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/number_xml"
+                style="@style/style_text_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:inputType="phone" />
 
-    </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="59dp"
-        android:hint="@string/enter_pass"
-        app:endIconMode="password_toggle"
-        app:hintAnimationEnabled="true">
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/password_xml"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            style="@style/style_text_edit"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            />
+            android:layout_height="59dp"
+            android:hint="@string/enter_pass"
+            app:endIconMode="password_toggle"
+            app:hintAnimationEnabled="true">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password_xml"
+                android:layout_width="match_parent"
+                style="@style/style_text_edit"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                />
 
-    </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="@string/auto"
-        app:endIconMode="clear_text"
-        app:hintAnimationEnabled="true">
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/car_xml"
-            style="@style/style_text_edit"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            />
+            android:layout_height="50dp"
+            android:hint="@string/auto"
+            app:endIconMode="clear_text"
+            app:hintAnimationEnabled="true">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/car_xml"
+                style="@style/style_text_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                />
 
-    </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="@string/weigth_ton"
-        app:hintAnimationEnabled="true">
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/lifting_xml"
-            style="@style/style_text_edit"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_height="50dp"
+            android:hint="@string/weigth_ton"
+            app:hintAnimationEnabled="true">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/lifting_xml"
+                style="@style/style_text_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="@string/type_cargo"
-        app:hintAnimationEnabled="true">
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/type_xml"
-            style="@style/style_text_edit"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_height="50dp"
+            android:hint="@string/type_cargo"
+            app:hintAnimationEnabled="true">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/type_xml"
+                style="@style/style_text_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="@string/car_owner"
-        app:hintAnimationEnabled="true">
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/owner_xml"
-            style="@style/style_text_edit"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_height="50dp"
+            android:hint="@string/car_owner"
+            app:hintAnimationEnabled="true">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/owner_xml"
+                style="@style/style_text_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
 
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="@string/driver"
-        app:hintAnimationEnabled="true">
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/driver_xml"
-            style="@style/style_text_edit"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_height="50dp"
+            android:hint="@string/driver"
+            app:hintAnimationEnabled="true">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/driver_xml"
+                style="@style/style_text_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
 
 
-    <Button
-        android:layout_marginVertical="20dp"
-        style="@style/style_button"
-        android:id="@+id/register_xml"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="@string/register"/>
+        <Button
+            android:layout_marginVertical="20dp"
+            style="@style/style_button"
+            android:id="@+id/register_xml"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@string/register"/>
+
+    </LinearLayout>
+
+
+
+
 
 </LinearLayout>

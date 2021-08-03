@@ -83,7 +83,7 @@ public class RegistrationAdmin extends Fragment {
                     admin.setPassword(password.getText().toString());
                     admin.setRole(role.getSelectedItem().toString());
                     admin.setTag(tags);
-                    admin.setEmail(email.getText().toString()+ "@stft.com ");
+                    admin.setEmail(email.getText().toString()+ "@stft.com");
 
                     db.collection("Admins").document(name.getText().toString())
                             .set(admin)
