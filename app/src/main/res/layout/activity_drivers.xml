@@ -20,10 +20,13 @@
 
 
     <Button
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="10dp"
+        style="@style/style_button"
         app:layout_constraintBottom_toBottomOf="@id/nav_driver_fragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="show QR code"
+        android:text="@string/show_qr"
         android:id="@+id/button"/>
 
 
