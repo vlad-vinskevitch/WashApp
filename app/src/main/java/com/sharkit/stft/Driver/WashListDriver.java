@@ -42,7 +42,7 @@ public class WashListDriver extends Fragment {
         View root = inflater.inflate(R.layout.wash_list_driver, container, false);
         findView(root);
         calendar.setTimeInMillis(Variable.getTime());
-        onClick();
+//        onClick();
         setAllList();
 
 
@@ -107,6 +107,6 @@ public class WashListDriver extends Fragment {
 
     private void findView(View root) {
         listView = root.findViewById(R.id.list_driver_xml);
-        tabLayout = root.findViewById(R.id.tabs_xml);
+//        tabLayout = root.findViewById(R.id.tabs_xml);
     }
 }
