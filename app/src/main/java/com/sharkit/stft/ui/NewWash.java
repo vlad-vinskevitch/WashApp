@@ -2,9 +2,25 @@ package com.sharkit.stft.ui;
 
 public class NewWash {
 
-    private String data, email;
+    private String data, email, year, month;
     private Long time;
     private int number;
+
+    public String getYear() {
+        return year;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
+    }
+
+    public String getMonth() {
+        return month;
+    }
+
+    public void setMonth(String month) {
+        this.month = month;
+    }
 
     public String getData() {
         return data;

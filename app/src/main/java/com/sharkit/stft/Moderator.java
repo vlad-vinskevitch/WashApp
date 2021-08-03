@@ -136,6 +136,8 @@ public class Moderator extends AppCompatActivity {
         newWash.setTime(calendar.getTimeInMillis());
         newWash.setData(format.format(calendar.getTimeInMillis()));
         newWash.setNumber(Integer.parseInt(s));
+        newWash.setMonth(calendar.get(Calendar.MONTH)+1+"");
+        newWash.setYear(calendar.get(Calendar.YEAR)+"");
 
         db.collection("Wash")
                 .add(newWash)

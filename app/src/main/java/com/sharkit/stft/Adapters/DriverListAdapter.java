@@ -18,6 +18,7 @@ import com.sharkit.stft.ui.Driver;
 import com.sharkit.stft.ui.Variable;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class DriverListAdapter extends BaseAdapter {
     private ArrayList<Driver> mGroup;
@@ -60,6 +61,8 @@ public class DriverListAdapter extends BaseAdapter {
         layout.setOnClickListener(v -> {
             Variable.setDriver(mGroup.get(position).getDriver());
             Variable.setEmail(mGroup.get(position).getEmail());
+            Calendar calendar = Calendar.getInstance();
+            Variable.setTime(calendar.getTimeInMillis());
             NavController navController;
             if (Variable.getRole().equals("Модератор")) {
                 navController = Navigation.findNavController((Activity) mContext, R.id.nav_host_fragment);

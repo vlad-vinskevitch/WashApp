@@ -2,6 +2,15 @@ package com.sharkit.stft.ui;
 
 public class Variable {
     private static String firm, driver, role, email;
+    private static long time;
+
+    public static long getTime() {
+        return time;
+    }
+
+    public static void setTime(long time) {
+        Variable.time = time;
+    }
 
     public static String getRole() {
         return role;

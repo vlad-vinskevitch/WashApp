@@ -106,6 +106,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
                                 for (QueryDocumentSnapshot snapshot : queryDocumentSnapshots){
                                     Driver driver1 = snapshot.toObject(Driver.class);
+                                    Variable.setRole("Водій");
                                     Variable.setDriver(driver1.getDriver());
                                     Variable.setEmail(authResult.getUser().getEmail());
                                 }
